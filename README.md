@@ -158,7 +158,7 @@ example of overriding the default heading token rendering by adding an embedded 
 var marked = require('marked');
 var renderer = new marked.Renderer();
 
-renderer.heading = function (text, level) {
+renderer.heading = function (text, level, raw) {
   var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
 
   return '<h' + level + '><a name="' +
@@ -186,7 +186,7 @@ This code will output the following HTML:
 - code(*string* code, *string* language)
 - blockquote(*string* quote)
 - html(*string* html)
-- heading(*string* text, *number*  level)
+- heading(*string* text, *number*  level, *string* raw)
 - hr()
 - list(*string* body, *boolean* ordered)
 - listitem(*string*  text)
